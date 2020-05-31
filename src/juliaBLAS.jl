@@ -264,3 +264,17 @@ function lmul!(A::Adjoint{T,UnitLowerTriangular{T,S}}, B::StridedMatrix{T}, α::
     end
     return B
 end
+# saxpy
+function saxpy!(N::UInt8, INCX::Int64, INCY::Int64, SA, SX)
+    # N is Integer
+    # SA is Real
+    # SX is real Array
+    
+
+	for i = 1:n
+	    for j = 1:p
+		C(:,j) = A(:,k)*B(k,j)+C(:,j)
+	    end
+    end
+    return C
+end
